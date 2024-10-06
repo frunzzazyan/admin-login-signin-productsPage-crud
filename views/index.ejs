@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="./header.css">
+  <title>Home</title>
+</head>
+<body>
+  <%-include("./header.ejs") %>
+  <div class="products">
+    <% products.map((elem,idx)=>{ %>
+      <div class="product">
+        <img src="<%= elem.image%>" alt="">
+        <p><%= elem.description%></p>
+        <h3>price_<%= elem.price%> $</h3>
+        <button data-n="<%= idx%>" class="add-cart">add cart</button>
+      </div>
+      <% }) %>
+      <script src="./script.js"></script>
+    </div>
+</body>
+</html>

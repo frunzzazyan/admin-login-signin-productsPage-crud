@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <%-include("./header.ejs") %>
+    <div class="cart">
+        <% cart.forEach(elem=>{ %>
+            <div class="product">
+                <img src="<%= elem.image %>" alt="">
+                <div class="text">
+                    <h2><%= elem.title %></h2>
+                    <p><%= elem.description %></p>
+                    <h4>rating_<%= elem.rating.rate %></h4>
+                </div>
+                <h3 class="price">
+                    <%= elem.price %> $
+                </h3>
+                <h1 data-n="<%= elem.id %>" class="close">X</h1>
+            </div>
+        <% }) %>
+    </div>
+    <script src="./cart.js"></script>
+</body>
+</html>
